@@ -1,12 +1,12 @@
-import subprocess
+import urllib.request
 
-# LFS 파일 다운로드
-try:
-    subprocess.run(['git', 'lfs', 'pull'], check=True)
-    print("LFS 파일 다운로드 완료")
-except Exception as e:
-    print(f"LFS 다운로드 실패: {e}")
-    
+# DB 파일 없으면 GitHub LFS에서 직접 다운로드
+if not os.path.exists(DB_PATH):
+    print("DB 파일 다운로드 중...")
+    lfs_url = "https://media.githubusercontent.com/media/leejaeyung0-ui/ddareungi-analysis/main/ljy_ddareungi.db"
+    urllib.request.urlretrieve(lfs_url, DB_PATH)
+    print("DB 파일 다운로드 완료!")
+
 from flask import Flask, jsonify, request, send_from_directory
 import sqlite3
 import os
