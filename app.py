@@ -1,9 +1,23 @@
+import subprocess
+
+# LFS 파일 다운로드
+try:
+    subprocess.run(['git', 'lfs', 'pull'], check=True)
+    print("LFS 파일 다운로드 완료")
+except Exception as e:
+    print(f"LFS 다운로드 실패: {e}")
+    
 from flask import Flask, jsonify, request, send_from_directory
 import sqlite3
 import os
 
 app = Flask(__name__, static_folder='static')
-DB_PATH = os.path.join(os.path.dirname(__file__), 'ljy_ddareungi.db')
+DB_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'ljy_ddareungi.db')
+
+# DB 파일 존재 여부 확인
+if not os.path.exists(DB_PATH):
+    print(f"DB 파일 없음: {DB_PATH}")
+    print(f"현재 폴더 파일 목록: {os.listdir(os.path.dirname(DB_PATH))}")
 
 def query_db(sql, args=()):
     con = sqlite3.connect(DB_PATH)
