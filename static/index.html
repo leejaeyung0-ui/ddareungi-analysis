@@ -130,12 +130,12 @@ footer { text-align:center; padding:20px; background:#2d3748; color:#a0aec0; fon
         <label>📅 월</label>
         <select id="f-month">
           <option value="all">전체</option>
-          <option value="07월">7월</option>
-          <option value="08월">8월</option>
-          <option value="09월">9월</option>
-          <option value="10월">10월</option>
-          <option value="11월">11월</option>
-          <option value="12월">12월</option>
+          <option value="202507">7월</option>
+          <option value="202508">8월</option>
+          <option value="202509">9월</option>
+          <option value="202510">10월</option>
+          <option value="202511">11월</option>
+          <option value="202512">12월</option>
         </select>
       </div>
       <div class="filter-group">
@@ -328,10 +328,11 @@ function renderResults(d, analysis, filters) {
   document.getElementById('r-label').textContent = labels.length ? labels.join(' / ') : '전체';
 
   // 월별
-  const months = ['07월','08월','09월','10월','11월','12월'];
-  const mMap = {};
-  d.monthly.forEach(r => mMap[r.month] = r.count);
-  drawBar('c-month', months, months.map(m => mMap[m]||0), COLORS);
+  const monthKeys = ['202507','202508','202509','202510','202511','202512'];
+const monthLabels = ['7월','8월','9월','10월','11월','12월'];
+const mMap = {};
+d.monthly.forEach(r => mMap[String(r.month)] = r.count);
+drawBar('c-month', monthLabels, monthKeys.map(m => mMap[m]||0), COLORS);
 
   // 성별 도넛
   const gMap = {'M':'남성','F':'여성','미상':'미상'};
