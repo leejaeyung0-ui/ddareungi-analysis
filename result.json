@@ -1,0 +1,156 @@
+{
+  "summary": {
+    "total_use": 9248095,
+    "total_rows": 629975,
+    "clean_rows": 557980,
+    "period": "2025년 7월 ~ 12월",
+    "knn_acc": 63.5,
+    "r_squared": 0.863
+  },
+  "monthly": [
+    {
+      "month": 202507,
+      "count": 1574381
+    },
+    {
+      "month": 202508,
+      "count": 1581765
+    },
+    {
+      "month": 202509,
+      "count": 1590418
+    },
+    {
+      "month": 202510,
+      "count": 1601309
+    },
+    {
+      "month": 202511,
+      "count": 1601958
+    },
+    {
+      "month": 202512,
+      "count": 1298264
+    }
+  ],
+  "gender": [
+    {
+      "gender": "F",
+      "count": 2807652
+    },
+    {
+      "gender": "M",
+      "count": 3820347
+    },
+    {
+      "gender": "미상",
+      "count": 2620096
+    }
+  ],
+  "age": [
+    {
+      "age_group": "20대",
+      "count": 2121569
+    },
+    {
+      "age_group": "30대",
+      "count": 1793594
+    },
+    {
+      "age_group": "40대",
+      "count": 1426971
+    },
+    {
+      "age_group": "50대",
+      "count": 1172818
+    },
+    {
+      "age_group": "기타",
+      "count": 1092336
+    },
+    {
+      "age_group": "~10대",
+      "count": 866936
+    },
+    {
+      "age_group": "60대",
+      "count": 633098
+    },
+    {
+      "age_group": "70대이상",
+      "count": 140773
+    }
+  ],
+  "rent": [
+    {
+      "rent_simple": "일일권",
+      "count": 2466631
+    },
+    {
+      "rent_simple": "정기권",
+      "count": 6781464
+    }
+  ],
+  "distance": [
+    {
+      "range": "0-2km",
+      "count": 50176
+    },
+    {
+      "range": "10km+",
+      "count": 370209
+    },
+    {
+      "range": "2-5km",
+      "count": 65877
+    },
+    {
+      "range": "5-10km",
+      "count": 71718
+    }
+  ],
+  "time": [
+    {
+      "range": "10-30분",
+      "count": 55637
+    },
+    {
+      "range": "10분미만",
+      "count": 23630
+    },
+    {
+      "range": "30-60분",
+      "count": 59528
+    },
+    {
+      "range": "60분+",
+      "count": 419185
+    }
+  ],
+  "cluster_summary": [
+    {
+      "cluster": 1,
+      "use_count": 61.59,
+      "distance_km": 128.14,
+      "use_time_min": 1123.49
+    },
+    {
+      "cluster": 2,
+      "use_count": 26.17,
+      "distance_km": 60.26,
+      "use_time_min": 546.65
+    },
+    {
+      "cluster": 3,
+      "use_count": 5.55,
+      "distance_km": 12.32,
+      "use_time_min": 113.18
+    }
+  ],
+  "regression": {
+    "intercept": 2.2783,
+    "coefficient": 0.1042,
+    "r_squared": 0.863,
+    "pred_30min": 5.41
+  }
+}
